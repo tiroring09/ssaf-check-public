@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   const dividerInput = document.querySelector('#divider')
-  dividerInput.value = '마 감';
+  dividerInput.value = '---------------------------------------------------------------★마감★---------------------------------------------------------------';
 
   document.querySelector('#quizBtn').addEventListener('click', quiz, false);
   const content = document.querySelector('#content');

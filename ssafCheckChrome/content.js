@@ -1,41 +1,38 @@
 const members = [
-  { name: '강재구' },
-  { name: '고경득' },
-  { name: '공태경' },
-  { name: '김주현' },
-  { name: '김태우' },
-  { name: '나윤지' },
-  { name: '박선환' },
-  { name: '박유은' },
-  { name: '박준일' },
-  { name: '박춘화' },
-  { name: '신영찬' },
-  { name: '신채린' },
-  { name: '오지수' },
-  { name: '이종혁' },
-  { name: '장현준' },
-  { name: '전은정' },
-  { name: '정윤환' },
-  { name: '정형수' },
-  { name: '조진환' },
-  { name: '조항래' },
-  { name: '차영부' },
-  { name: '홍주표' },
-  { name: '황수민' },
+  { name: '김강현' },
+  { name: '김고은' },
+  { name: '김동률' },
+  { name: '김동현' },
+  { name: '김민건' },
+  { name: '김수민' },
+  { name: '김승기' },
+  { name: '김태연' },
+  { name: '박재우' },
+  { name: '배유진' },
+  { name: '배재원' },
+  { name: '서민성' },
+  { name: '유동균' },
+  { name: '유지민' },
+  { name: '윤경준' },
+  { name: '윤수연' },
+  { name: '이정훈' },
+  { name: '전혜인' },
+  { name: '정다희' },
+  { name: '정동건' },
+  { name: '정명주' },
+  { name: '정지찬' },
+  { name: '최문경' },
+  { name: '최연희' },
+  { name: '최예인' },
 ];
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
   if (request.msg === 'quiz') {
     const posts = document.querySelectorAll('.post__content');
     const data = Array.from(posts).map(p => {
-      let name, msg, time;
-      try {
-        name = p.querySelector('button.user-popover').textContent;
-        msg = p.querySelector('.post-message__text').textContent;
-        time = p.querySelector('.post__time').textContent;
-      } catch (error) {
-        console.log(error)
-      }
+      const name = p.querySelector('button.user-popover').innerText;
+      const time = p.querySelector('.post__time').innerText;
+      const msg = p.querySelector('.post-message__text').innerText;
 
       return {
         name,
